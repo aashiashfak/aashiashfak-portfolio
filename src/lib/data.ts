@@ -9,7 +9,15 @@ export const DEVELOPER = {
   status: "Available for Projects",
 };
 
-export const TECH_STACK = [
+export interface Tech {
+  name: string;
+  tag: string;
+  icon: string;
+  color: string;
+  level: number;
+}
+
+export const TECH_STACK: Tech[] = [
   { name: "React", tag: "Frontend", icon: "⚛️", color: "#61dafb", level: 90 },
   { name: "Django", tag: "Backend", icon: "🐍", color: "#092e20", level: 92 },
   { name: "PostgreSQL", tag: "Database", icon: "🐘", color: "#336791", level: 85 },
@@ -24,7 +32,22 @@ export const TECH_STACK = [
   { name: "Celery", tag: "Task Queue", icon: "⚡", color: "#37b24d", level: 75 },
 ];
 
-export const PROJECTS = [
+export interface Project {
+  id: string;
+  title: string;
+  subtitle: string;
+  desc: string;
+  tags: string[];
+  github: string;
+  demo?: string;
+  color: string;
+  accentColor: string;
+  emoji: string;
+  status: string;
+  year: string;
+}
+
+export const PROJECTS: Project[] = [
   {
     id: "01",
     title: "Evento",
@@ -80,7 +103,16 @@ export const PROJECTS = [
   },
 ];
 
-export const EXPERIENCE = [
+export interface Experience {
+  year: string;
+  role: string;
+  org: string;
+  desc: string;
+  side: string;
+  color: string;
+}
+
+export const EXPERIENCE: Experience[] = [
   {
     year: "2024 — Present",
     role: "Python Full Stack Developer",
@@ -115,7 +147,12 @@ export const EXPERIENCE = [
   },
 ];
 
-export const NAV_LINKS = [
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export const NAV_LINKS: NavLink[] = [
   { label: "About", href: "#about" },
   { label: "Stack", href: "#tech" },
   { label: "Work", href: "#projects" },
